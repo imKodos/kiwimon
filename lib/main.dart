@@ -29,6 +29,8 @@ THE SOFTWARE. **/
 
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kiwimon/screens/main_menu.dart';
 import 'main_game_page.dart';
 
 Future<void> main() async {
@@ -43,10 +45,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Kiwimon',
-      home: MainGamePage(),
+    return MaterialApp(
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData.dark().copyWith(
+          textTheme: GoogleFonts.bungeeInlineTextTheme(),
+          scaffoldBackgroundColor: Colors.black),
+      home: const MainMenu(),
     );
   }
 }
